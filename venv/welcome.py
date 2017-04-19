@@ -1,8 +1,10 @@
 import click
 import requests
+
 """
 A command line application that parses json from newsapi.org
 """
+
 
 @click.command()
 def cli():
@@ -19,9 +21,9 @@ def cli():
 
     for article in article_list:
         click.echo(click.style('TITLE: ' + article['title'], fg='green'))
-        click.echo('BY: ' + article['author'])
+        click.echo(click.style('BY: ' + article['author'], fg='blue'))
         click.echo('\n')
-        click.echo(article['description'])
+        click.echo(click.wrap_text(article['description'], 100))
         click.echo('\n')
         click.echo('-' * 100)
 
@@ -29,7 +31,7 @@ def cli():
 def greeting():
     print("Hi there, I'm Vortex, your news buddy! You can count on me to keep you posted.")
     user_name = input('> What\'s your name?: ')
-    print('\nNice to meet you {}. Here\'s the latest news: \n'.format(user_name))
+    print('\nIt\'s nice to meet you {}. I\'ll have the latest news stories for you in a jiff: \n'.format(user_name))
     print('-' * 100)
 
 
