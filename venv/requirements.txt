@@ -1,0 +1,3 @@
+click==6.7
+requests==2.13.0
+-e git+https://github.com/edmondatto/bc-kam-1-CLI.git@923bb0bbae4e641b1e33718f17f61c0ee1af4964#egg=vortex&subdirectory=venv
